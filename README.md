@@ -8,6 +8,8 @@ executed commands. SCP file transfers are also supported. The underlying SSH lib
 ### Execute a Command ###
 
 ```
+import com.mle.ssh.{CommandResponse, CommandResult, SSH}
+import java.nio.file.Path
 val keyFile: Path = ???
 val ssh = new SSH("10.0.0.1", 22, "michael", keyFile)
 val response: CommandResponse = ssh execute "ls"
@@ -20,6 +22,9 @@ ssh.close()
 ### Transfer a File ###
 
 ```
+import java.nio.file.Path
+import com.mle.storage.StorageSize
+import rx.lang.scala.Observable
 val testFile: Path = ???
 val destination = testFile.getFileName.toString
 val transfer: Observable[StorageSize] = ssh.scp(testFile, destination)
