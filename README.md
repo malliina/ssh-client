@@ -19,6 +19,19 @@ val blockingResponse: CommandResult = response.await()
 ssh.close()
 ```
 
+### Execute a Command, using sudo ###
+
+```
+import com.mle.ssh.{CommandResponse, CommandResult, SSH}
+import java.nio.file.Path
+val keyFile: Path = ???
+val sudoPassword: String = ???
+val ssh = new SSH("10.0.0.1", 22, "michael", keyFile)
+val response: CommandResponse = ssh.executeAsSudo(sudoPassword)("useradd -m -s /bin/bash newusername")
+response.await()
+ssh.close()
+```
+
 ### Transfer a File ###
 
 ```
