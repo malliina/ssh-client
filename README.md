@@ -40,5 +40,6 @@ import java.nio.file.Path
 import rx.lang.scala.Observable
 val testFile: Path = ???
 val destination = testFile.getFileName.toString
+val ssh = new SSH("10.0.0.1", 22, "michael", keyFile)
 val transfer: Observable[StorageSize] = ssh.scp(testFile, destination)
 ```
