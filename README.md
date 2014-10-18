@@ -22,8 +22,8 @@ ssh.close()
 ### Transfer a File ###
 
 ```
-import java.nio.file.Path
 import com.mle.storage.StorageSize
+import java.nio.file.Path
 import rx.lang.scala.Observable
 val testFile: Path = ???
 val destination = testFile.getFileName.toString
