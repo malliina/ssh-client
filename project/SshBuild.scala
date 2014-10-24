@@ -20,8 +20,8 @@ object SshBuild extends Build {
     fork in Test := true,
     libraryDependencies ++= Seq(
       "com.jcraft" % "jsch" % "0.1.51",
-      "io.reactivex" % "rxscala_2.11" % "0.21.1",
-      "com.github.malliina" %% "util" % "1.4.2") map (_ withSources()),
+      "io.reactivex" %% "rxscala" % "0.21.1",
+      "com.github.malliina" %% "util" % "1.5.0") map (_ withSources()),
     // includes scala-xml for 2.11 but excludes it for 2.10
     // see http://www.scala-lang.org/news/2014/03/06/release-notes-2.11.0-RC1.html
     libraryDependencies := {
