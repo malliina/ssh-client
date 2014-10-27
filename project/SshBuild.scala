@@ -31,6 +31,9 @@ object SshBuild extends Build {
         case _ =>
           libraryDependencies.value
       }
-    }
+    },
+    resolvers ++= Seq(
+      "typesafe releases" at "http://repo.typesafe.com/typesafe/releases/",
+      "Sonatype releases" at "https://oss.sonatype.org/content/repositories/releases/")
   )
 }
