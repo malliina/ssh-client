@@ -15,8 +15,8 @@ object SshBuild extends Build {
     organization := "com.github.malliina",
     SbtUtils.gitUserName := "malliina",
     SbtUtils.developerName := "Michael Skogberg",
-    scalaVersion := "2.11.2",
-    crossScalaVersions := Seq("2.10.4", "2.11.2"),
+    scalaVersion := "2.11.4",
+    crossScalaVersions := Seq("2.10.4", "2.11.4"),
     fork in Test := true,
     libraryDependencies ++= Seq(
       "com.jcraft" % "jsch" % "0.1.51",

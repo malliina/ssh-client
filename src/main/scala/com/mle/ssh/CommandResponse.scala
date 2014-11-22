@@ -18,10 +18,4 @@ case class CommandResponse(exitValue: Future[Int], standardOut: Observable[Strin
     val out = output.toBlocking.toList
     CommandResult(exit, standard, error, out)
   }
-
-  //  def isSuccess = exitValue.map(_ == 0)
-  //
-  //  standardOut.toIterable
-  //
-  //  def map(f: Int => CommandResponse) = exitValue.map(f)
 }

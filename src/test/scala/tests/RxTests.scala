@@ -4,6 +4,8 @@ import com.mle.streams.RxHelper
 import org.scalatest.FunSuite
 import rx.lang.scala.Observable
 
+import scala.concurrent.Future
+
 /**
  * @author Michael
  */
@@ -26,5 +28,9 @@ class RxTests extends FunSuite {
   test("Observable[Char] to Observable[String] using Observable.apply") {
     val lines = RxHelper.bufferLines(charObs)
     assert(lines.toBlocking.toList === List("ab", "cd", "e"))
+  }
+  test("concat, map"){
+    val f = Future(5)
+    f.map(_ => ())
   }
 }
