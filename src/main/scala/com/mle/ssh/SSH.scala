@@ -29,6 +29,7 @@ class SSH(host: String, port: Int, user: String, creds: Creds, strictKeyChecking
   val EXEC = "exec"
   val SHELL = "shell"
 
+  // I could use ExecutionContexts.cached, I think
   private val executor = Executors.newCachedThreadPool()
   private implicit val ec = ExecutionContext.fromExecutor(executor)
 
